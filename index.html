@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#100d0a">
+<link rel="icon" href="data:,">
+<title>Sîn: Curse of Babylon — PlayCanvas Test</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="c" aria-label="نسخة PlayCanvas التجريبية من لعبة سين"></canvas>
+<div id="grade"></div><div id="vignette"></div>
+<div id="touch" aria-hidden="true"></div>
+<div id="stick"><div id="knob"></div></div>
+<button id="run" class="round-control" aria-label="اضغط باستمرار للركض"><span class="run-icon">↟</span><span>ركض</span></button>
+<header id="hud">
+  <div class="hud-group"><button id="pause">إيقاف</button><button id="skip">تخطي المشهد</button></div>
+  <div id="objective">اعبر بوابة عشتار وتابع نحو القصر</div>
+  <div class="hud-group"><button id="quality">جودة: تلقائية</button><button id="restart">إعادة</button></div>
+</header>
+<aside id="perf" aria-label="مقاييس الأداء"><b>PLAYCANVAS</b><span id="fps">— FPS</span><span id="draws">— draws</span><span id="tris">— triangles</span><span id="resolution">— resolution</span></aside>
+<div id="hint">العصا للحركة · اسحب يمين الشاشة للكاميرا · Shift للركض</div>
+<div id="rotate-note">يمكن اللعب عمودياً، والوضع الأفقي يمنح رؤية أوسع</div>
+<section id="overlay">
+  <div id="loading-pane" class="menu-card">
+    <div class="eyebrow">ENGINE COMPARISON BUILD</div>
+    <h1>SIN</h1><h2>THE CURSE OF BABYLON</h2>
+    <div id="bar"><i></i></div><p id="status">تهيئة PlayCanvas…</p><pre id="error"></pre>
+  </div>
+  <div id="main-menu" class="menu-card hidden">
+    <div class="eyebrow">PLAYCANVAS · WEBGL 2 · ACT I</div>
+    <h1>SIN</h1><h2>THE CURSE OF BABYLON</h2>
+    <p class="lede">بوابة عشتار تنتظر. النسخة التجريبية المستقلة بمشهد بابل وشخصية سين الأصليين.</p>
+    <button id="go" class="primary">ابدأ التجربة <small>NEW GAME</small></button>
+    <button id="settings-open">الإعدادات <small>SETTINGS</small></button>
+    <div class="menu-foot">ORIGINAL ASSETS · PLAYCANVAS 2.12.0</div>
+  </div>
+  <div id="settings-menu" class="menu-card hidden">
+    <div class="eyebrow">SIN / OPTIONS</div><h3>الإعدادات</h3>
+    <label for="sensitivity">حساسية الكاميرا <span id="sensitivity-value">5 / 10</span></label>
+    <input id="sensitivity" type="range" min="1" max="10" step="1" value="5">
+    <button id="quality-setting">جودة الرسومات <small id="quality-value">تلقائية</small></button>
+    <p class="note">الوضع التلقائي يضبط دقة العرض والظلال ومسافة النباتات بحسب الأداء. تُحفظ الإعدادات في هذا المتصفح فقط.</p>
+    <button id="settings-back">العودة</button>
+  </div>
+  <div id="pause-menu" class="menu-card hidden">
+    <div class="eyebrow">GAME PAUSED</div><h3>توقّف مؤقت</h3>
+    <button id="resume" class="primary">متابعة</button><button id="pause-restart">إعادة من البوابة</button><button id="pause-settings">الإعدادات</button>
+  </div>
+  <div id="complete-menu" class="menu-card hidden">
+    <div class="eyebrow">PLAYCANVAS TEST COMPLETE</div><h3>وصلت إلى القصر</h3>
+    <p class="lede">اكتملت جولة المشهد. يمكنك إعادة الاختبار أو متابعة استكشاف بابل.</p>
+    <button id="continue" class="primary">متابعة الاستكشاف</button><button id="complete-restart">إعادة الجولة</button>
+  </div>
+</section>
+<script src="vendor/playcanvas.min.js"></script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
